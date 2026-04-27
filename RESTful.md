@@ -1,0 +1,23 @@
+# Thiết kế API Quản lý Nhân sự (RESTful)
+
+- Phần 1: Tại sao chọn REST thay vì SOAP?
+  - Tính linh hoạt: Kiến trúc nhẹ, dễ dàng mở rộng và bảo trì hơn so với sự cứng nhắc của SOAP.
+  - Định dạng dữ liệu (JSON): Hỗ trợ trả về JSON, cực kỳ thân thiện và dễ xử lý khi gọi API từ Frontend (như ReactJS), trong khi SOAP bắt buộc phải dùng XML cồng kềnh.
+  - Hiệu năng cao: Kích thước gói tin (Payload) nhỏ hơn giúp tiết kiệm băng thông mạng, tốc độ phản hồi nhanh hơn, rất phù hợp cho các ứng dụng Web hiện đại.
+- Phần 2: Thiết kế Endpoint (Tài nguyên: Employee)
+  - Quy tắc chuẩn: Chỉ dùng danh từ số nhiều (employees), tuyệt đối không chứa động từ (như get, add, delete) trong URL.
+  - 1. Lấy danh sách tất cả nhân viên
+    - HTTP Method: GET
+    - URL (Endpoint): /api/v1/employees
+  - 2. Lấy thông tin một nhân viên theo ID
+    - HTTP Method: GET
+    - URL (Endpoint): /api/v1/employees/{id}
+  - 3. Tạo mới một nhân viên
+    - HTTP Method: POST
+    - URL (Endpoint): /api/v1/employees
+  - 4. Cập nhật thông tin nhân viên
+    - HTTP Method: PUT
+    - URL (Endpoint): /api/v1/employees/{id}
+  - 5. Xóa một nhân viên
+    - HTTP Method: DELETE
+    - URL (Endpoint): /api/v1/employees/{id}
